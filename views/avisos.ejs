@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Efaisa</title>
+	<link rel="stylesheet" href="./css/estilos.css">
+
+</head>
+<body>
+	
+	<div class="contenedor">
+		<nav>
+			<a class="logotipo" href="#">Efaisa</a>
+			</div>
+		</nav>
+		<section>
+			<section class="grid">
+				<% Zonas.forEach(function(Zonas) { %>			
+					<div class= card>
+			
+						<div class="botones">
+							<a onclick="Dato('<%= Zonas.Zona %>','<%= Zonas.Estado %>')" class="boton primario"> Ver </a>
+							<a href="#" class="boton secundario">Reiniciar</a>
+						</div>
+					</div>
+				<% }); %>
+				
+			</section>		
+		</section>
+	</div>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script >
+		function Dato(Zona,Estado){	
+			actualizador();
+			var E="";
+			if(Estado=="well"){
+			E="Estado de la zona es bueno";
+			Swal.fire({
+  				title: Zona,
+ 			 	text: E,
+				  icon: 'success',
+
+ 		 confirmButtonText: 'Cool'
+			})	
+		}	else if(Estado=="warnings")	{
+			E="Alerta en la zona";
+		Swal.fire({
+  				title: Zona,
+ 			 	text: E,
+				  icon: 'error',
+
+ 		 confirmButtonText: 'Cool'
+			
+		})
+		}else if(Estado=="error"){
+
+			E="Zona con errores";
+			Swal.fire({
+  				title: Zona,
+ 			 	text: E,
+				  icon: 'question',
+
+ 		 confirmButtonText: 'Cool'
+		})
+		}
+	}
+	function actualizador(){
+		const persona = {persona:[
+		{"Estado":1},
+		{"Estado":"1",},
+		{"Estado":"1",},
+		{"Estado":"1",},
+		{"Estado":"1",},
+		{"Estado":"1",},
+		{"Estado":"1",},
+		{"Estado":"1",},
+		{"Estado":"1",},
+		{"Estado":"1",},
+		{"Estado":"1",},
+		{"Estado":"1",},
+		{"Estado":"1",},
+		{"Estado":"1",},
+		{"Estado":"1",},
+		{"Estado":"1",},
+		{"Estado":"1",},
+		{"Estado":"1",},
+		{"Estado":"1",},
+		{"Estado":"1",}]}
+
+
+	console.log(persona);
+
+
+
+//		if(Estado=="well"){
+
+
+
+
+
+
+	//	}else if(){
+
+//		}else if(){
+
+//		}
+
+
+	}
+		
+
+
+	</script>
+	
+</body>
+</html>
